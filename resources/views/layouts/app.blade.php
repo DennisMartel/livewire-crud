@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
@@ -35,5 +35,15 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script>
+            Livewire.on('alert', function(title, message, icon) {
+                Swal.fire(
+                    title,
+                    message,
+                    icon
+                )
+            })
+        </script>
     </body>
 </html>
